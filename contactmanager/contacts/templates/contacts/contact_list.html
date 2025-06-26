@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <title>List-contact</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Webflow" name="generator"/>
+  <link href="{% static 'css/shared.b1cc0ac0c.css' %}" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript">
+  </script>
+  <script src="{% static 'js/contact_list.js' %}"></script>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="w-layout-blockcontainer w-container">
+      <section class="section-regular">
+        <div class="container-large">
+          <div class="title-wrapper">
+            <div class="button-item---brix">
+              <a class="button-v1---brix hover-v5---brix w-button" href="{% url 'contact_add' %}">
+                Enregistrer un nouveau contact
+              </a>
+            </div>
+            <h1 class="h1-heading">Voici la liste des contacts enregistrés</h1>
+          </div>
+
+          <div class="w-layout-grid grid-three-column">
+            {% for contact in contacts %}
+              <div class="integration-card">
+                <div class="icon w-embed">
+                  <!-- Icône -->
+                  <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4S8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                  </svg>
+                </div>
+                <div class="column-small">
+                  <div class="h6-heading">{{ contact.first_name }} {{ contact.last_name }}</div>
+                </div>
+                <div class="descript_container">
+                  <div class="email_container">
+                    <div class="text-block">Email:</div>
+                    <div class="email_text">{{ contact.email }}</div>
+                  </div>
+                  <div class="email_container">
+                    <div class="text-block">Tel:</div>
+                    <div class="email_text">{{ contact.phone }}</div>
+                  </div>
+                </div>
+                <div class="button_container">
+                  <a class="button-primary w-button" href="{% url 'contact_edit' contact.pk %}">Modifier</a>
+                  <a class="button-primary is-red w-button" href="{% url 'contact_delete' contact.pk %}">Supprimer</a>
+                </div>
+              </div>
+            {% empty %}
+              <p>Aucun contact enregistré pour le moment.</p>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="{% static 'js/685ad5e37786786c67482283.js' %}"></script>
+  <script src="{% static 'js/schunk.36b8fb49256177c8.js' %}"></script>
+  <script src="{% static 'js/bbf12fc8.22dc7af7fbdf2276.js' %}"></script>
+</body>
+</html>

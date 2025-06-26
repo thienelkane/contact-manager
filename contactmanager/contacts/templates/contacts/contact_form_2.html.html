@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <h2>👤 Nouveau / Modifier un contact</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enregistrer</button>
+        </form>
+        <a href="{% url 'contact_list' %}">← Retour</a>
+
+</body>
+</html>
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <title>Formulaire d'inscription</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta content="Webflow" name="generator"/>
+  <link href="{% static 'css/shared.fb31cdee1.css' %}" rel="stylesheet" type="text/css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script src="{% static 'js/contact_form_2.js' %}" type="text/javascript"></script>
+  <link rel="shortcut icon" href="{% static 'images/favicon.svg' %}" type="image/x-icon"/>
+</head>
+<body>
+  <div class="page-wrapper position-relative">
+    <div class="section small">
+      <div class="form-container">
+        <div class="container-default w-container">
+          <div class="inner-container _500px center">
+            <div class="button-item---brix">
+              <a class="button-v1---brix hover-v5---brix w-button" href="{% url 'contact_list' %}">
+                Retour à la liste
+              </a>
+            </div>
+            <div class="text-center">
+              <h1>Veuillez remplir les champs puis cliquez sur enregistrer</h1>
+            </div>
+          </div>
+
+          <div class="w-layout-grid grid-2-columns contact-v11">
+            <div>
+                
+              <form method="post" class="w-form">
+                {% csrf_token %}
+                <div class="w-layout-grid grid-2-columns form">
+                  <div class="div-block">
+                    <label for="id_first_name">Prénom</label>
+                    {{ form.first_name }}
+                  </div>
+                  <div class="div-block-2">
+                    <label for="id_last_name">Nom</label>
+                    {{ form.last_name }}
+                  </div>
+                  <div class="div-block-3">
+                    <label for="id_email">Email</label>
+                    {{ form.email }}
+                  </div>
+                  <div class="div-block-4">
+                    <label for="id_phone">Téléphone</label>
+                    {{ form.phone }}
+                  </div>
+                  <button type="submit" class="btn-primary w-button">Enregistrer</button>
+                </div>
+              </form>
+            </div>
+
+            <div>
+              <img alt="illustration" src="{% static 'images/form_illustration.svg' %}"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS scripts -->
+  <script src="{% static 'js/685aad14fe0b110b48963245.js' %}" type="text/javascript"></script>
+  <script src="{% static 'js/form_schunk.36b8fb49256177c8.js' %}" type="text/javascript"></script>
+  <script src="{% static 'js/a26373c2.380d41c73f942105.js' %}" type="text/javascript"></script>
+</body>
+</html>

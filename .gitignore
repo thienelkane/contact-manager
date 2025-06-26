@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Virtual environment
+env/
+venv/
+
+# VSCode
+.vscode/
+
+# Django
+*.pyc
+*.pyo
+db.sqlite3
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Webflow-related generated folders
+.webflow/
