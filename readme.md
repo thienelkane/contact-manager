@@ -1,4 +1,4 @@
-# Contact Manager Web App
+x# Contact Manager Web App
 
 A simple CRUD web application for managing a list of contacts (Create, Read, Update, Delete).
 
@@ -60,7 +60,6 @@ python manage.py runserver
 ├── static/                 # CSS/JS assets
 ├── templates/              # HTML templates
 ├── manage.py
-├── db.sqlite3
 ├── requirements.txt
 └── README.md
 ```
@@ -70,4 +69,11 @@ python manage.py runserver
 **Thienel Bocar Kane**  
 📧 thienelkane7@gmail.com
 📞 +221 77 427 32 81
+
 ---
+
+## Screenshots of the app
+
+![Contact list](images\contact_list.jpg)
+
+![Contact register form](images\contact_register_form.jpg)
