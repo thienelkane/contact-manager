@@ -74,6 +74,6 @@ python manage.py runserver
 
 ## Screenshots of the app
 
-![Contact list](images\contact_list.jpg)
+![Contact list](images/contact_list.jpg)
 
-![Contact register form](images\contact_register_form.jpg)
+![Contact register form](images/contact_register_form.jpg)
